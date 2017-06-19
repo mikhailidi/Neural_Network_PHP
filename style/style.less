@@ -1,0 +1,186 @@
+@primary: #0071bc;
+@green: #2e8540;
+@greenLight: lighten(@green, 15%);
+@red: #e31c3d;
+.transition(@var: 0.3s){
+  -moz-transition: all @var ease;
+  -webkit-transition: all @var ease;
+  -o-transition: all @var ease;
+}
+.border-radius(@var: 4px){
+  border-radius: @var;
+  -webkit-border-radius: @var;
+  -moz-border-radius: @var;
+}
+.scale(@var: 1) {
+  -webkit-transform: scale(@var);
+  -moz-transform: scale(@var);
+  -ms-transform: scale(@var);
+  -o-transform: scale(@var);
+  transform: scale(@var);
+}
+.button(@bg-color: #0071bc){
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  .border-radius(6px);
+  display: block;
+  background: @bg-color;
+  color: white;
+  .transition(0.2s);
+  text-align: center;
+  &:hover {
+    background: darken(@bg-color, 5%);
+  }
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+
+}
+.cleaner {clear: both;}
+
+#map {
+  background: url(../img/mapa3d.jpg);
+  background-size: cover;
+  height: 790px;
+  width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+.city {
+  text-align: center;
+  width: 120px;
+  padding: 10px;
+  position: absolute;
+  cursor: pointer;
+  font-size: 20px;
+  border: 1px solid crimson;
+  background: crimson;
+  color: white;
+  .border-radius();
+  &:hover {
+    background: white;
+    color: black;
+  }
+}
+.opened {
+  .border-radius(4px 0 0 4px);
+  border-right: transparent;
+  background: white !important;
+  color: black;
+}
+.wroclaw {
+  left: 200px;
+  bottom: 260px;
+}
+.krakow {
+  right: 270px;
+  bottom: 120px;
+}
+.warszawa {
+  right: 200px;
+  top: 330px;
+}
+.gdansk {
+  left: 320px;
+  top: 90px;
+}
+.szczecin {
+  left: 40px;
+  top: 170px;
+}
+.options {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 119px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  text-align: left;
+  background: crimson;
+  color: white;
+  border: 1px solid crimson;
+  //border-left: none;
+  li {
+    padding: 8px 0;
+    float: left;
+    display: block;
+    width: 120px;
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+}
+.count {
+  text-align: center;
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  width: 100px;
+  padding: 10px;
+  background: @greenLight;
+  color: white;
+  cursor: pointer;
+  .border-radius(6px);
+}
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+.start_point {
+  background: @green;
+  border-color: @green;
+}
+.finish_point {
+  background: @primary;
+  border-color: @primary;
+}
+.mp_table {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  width: 450px;
+  border: 1px solid #3c3c3c;
+  th {
+    text-align: center;
+    background: crimson;
+    color: whitesmoke;
+    padding: 8px;
+  }
+  td {
+    border: 1px solid black;
+  }
+  ul {
+    list-style: decimal;
+    li {
+      padding: 4px 0;
+      text-transform: capitalize;
+      i {
+        color: @red;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.results {
+  position: absolute;
+  right: 50px;
+  top: 300px;
+  font-size: 16px;
+  th {
+    text-align: center;
+    background: crimson;
+    color: whitesmoke;
+    padding: 8px;
+  }
+  .arrow td {
+    text-align: center;
+    padding: 5px 0;
+  }
+  i {
+    margin-right: 5px;
+  }
+}
